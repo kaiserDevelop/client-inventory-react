@@ -23,10 +23,10 @@ export default class AppNavbar extends Component {
         <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink
-              href="#">GitHub code client</NavLink>
+              href="https://github.com/kaiserDevelop/client-inventory-react">GitHub code client</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">GitHub code API Rest</NavLink>
+            <NavLink href="https://github.com/kaiserDevelop/springBoot">GitHub code API Rest</NavLink>
           </NavItem>
         </Nav>
       </Collapse>
