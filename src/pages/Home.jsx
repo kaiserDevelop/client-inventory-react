@@ -19,7 +19,12 @@ class Home extends Component {
 
         await fetch('api/inventory/records')
             .then(response => response.json())
-            .then(data => this.setState({ groups: data._embedded.inventoryList, isLoading: false }))
+            .then(data => {
+              if(data._embedded)
+                this.setState({ groups: data._embedded.inventoryList, isLoading: false })
+              else
+                this.setState({isLoading: false })
+            })
             .catch(() => this.props.history.push('/'));
     }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+//import { AvForm, AvField } from 'availity-reactstrap-validation';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import AppNavbar from '..//components/AppNavbar.jsx';
 
@@ -16,6 +17,7 @@ class SaveEdit extends Component {
     super(props);
     this.state = {
       item: this.emptyInventary
+
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,6 +52,7 @@ class SaveEdit extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
+
     const { item } = this.state;
     console.log(item);
     const url = (item.id ? `/api/inventory/records/${item.id}` : '/api/inventory/records/');
@@ -62,7 +65,9 @@ class SaveEdit extends Component {
       body: JSON.stringify(item)
     });
     this.props.history.push('/');
+
   }
+
   
   render() {
     const {item} = this.state;
@@ -76,7 +81,7 @@ class SaveEdit extends Component {
           <FormGroup>
             <Label for="name">Name</Label>
             <Input type="text" readOnly={item.id ? 'readOnly' : ''} name="name" id="name" value={item.name || ''}
-                   onChange={this.handleChange} autoComplete="name" />
+                   onChange={this.handleChange} autoComplete="name"  />
           </FormGroup>
           <FormGroup>
             <Label for="amount">Amount</Label>
